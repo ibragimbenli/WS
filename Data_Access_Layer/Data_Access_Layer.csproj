@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EFCore\" />
+    <Folder Include="AdoNetRepository\" />
+    <Folder Include="EFCoreRepository\Context\" />
   </ItemGroup>
 
   <ItemGroup>

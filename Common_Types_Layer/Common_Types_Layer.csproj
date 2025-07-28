@@ -10,4 +10,9 @@
     <ProjectReference Include="..\Model_Layer\Model_Layer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EFCore\" />
+    <Folder Include="AdoNet\" />
+  </ItemGroup>
+
 </Project>

@@ -2,7 +2,7 @@ using App_Service_Layer.InterFaces;
 using App_Service_Layer.Mapping;
 using App_Service_Layer.Services.Interfaces;
 using Business.Services;
-using Common_Types_Layer.Interfaces;
+using Common_Types_Layer.Dapper.Interfaces;
 using Data_Access_Layer.Dapper;
 using FluentValidation.AspNetCore;
 using Microsoft.Data.SqlClient;
@@ -12,7 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-//builder.Services.AddControllers();
+builder.Services.AddControllers();
+//builder.Services.AddControllers()
+//    .AddFluentValidation(config =>
+//    {
+//        config.RegisterValidatorsFromAssemblyContaining<PersonDtoValidator>();
+//    });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -30,11 +35,7 @@ builder.Services.AddAutoMapper(typeof(PersonProfile));
 builder.Services.AddAutoMapper(typeof(ProductProfile));
 builder.Services.AddAutoMapper(typeof(CategoryProfile));
 
-builder.Services.AddControllers()
-    .AddFluentValidation(config =>
-    {
-        config.RegisterValidatorsFromAssemblyContaining<PersonDtoValidator>();
-    });
+
 
 var app = builder.Build();
 

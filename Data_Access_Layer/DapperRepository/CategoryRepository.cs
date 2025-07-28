@@ -1,5 +1,5 @@
 ﻿using Common_Types_Layer.Base;
-using Common_Types_Layer.Interfaces;
+using Common_Types_Layer.Dapper.Interfaces;
 using Dapper;
 using Model_Layer.Entities;
 using System.Data;

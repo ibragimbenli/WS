@@ -1,8 +1,8 @@
-﻿using App_Service_Layer.Services.Interfaces;
-using Common_Types_Layer.Interfaces;
-using Model_Layer.Entities;
+﻿using App_Service_Layer.DTOs;
+using App_Service_Layer.Services.Interfaces;
 using AutoMapper;
-using App_Service_Layer.DTOs;
+using Common_Types_Layer.Dapper.Interfaces;
+using Model_Layer.Entities;
 namespace Business.Services
 {
     public class PersonService : IPersonService

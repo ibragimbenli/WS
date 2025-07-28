@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common_Types_Layer.Interfaces
+namespace Common_Types_Layer.Dapper.Interfaces
 {
     public interface IRepository<T> where T : class
     {
