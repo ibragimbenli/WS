@@ -1,5 +1,4 @@
 ﻿using Common_Types_Layer.Base;
-using Common_Types_Layer.Dapper.Interfaces;
 using Model_Layer.Entities;
 using System.Data;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using Common_Types_Layer.Interfaces.Dapper;
 
 namespace Data_Access_Layer.Dapper
 {

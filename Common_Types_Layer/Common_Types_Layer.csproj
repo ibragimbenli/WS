@@ -7,12 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Enum\**" />
+    <Compile Remove="Tool\**" />
+    <EmbeddedResource Remove="Enum\**" />
+    <EmbeddedResource Remove="Tool\**" />
+    <None Remove="Enum\**" />
+    <None Remove="Tool\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Model_Layer\Model_Layer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EFCore\" />
-    <Folder Include="AdoNet\" />
+    <Folder Include="Implementations\EFCore\" />
+    <Folder Include="Implementations\Dapper\" />
+    <Folder Include="Implementations\NHibernet\" />
+    <Folder Include="Interfaces\EFCore\" />
+    <Folder Include="Interfaces\NHibernet\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using App_Service_Layer.DTOs;
 using App_Service_Layer.InterFaces;
 using AutoMapper;
-using Common_Types_Layer.Dapper.Interfaces;
+using Common_Types_Layer.Interfaces.Dapper;
 using Model_Layer.Entities;
 namespace Business.Services
 {

@@ -2,7 +2,7 @@ using App_Service_Layer.InterFaces;
 using App_Service_Layer.Mapping;
 using App_Service_Layer.Services.Interfaces;
 using Business.Services;
-using Common_Types_Layer.Dapper.Interfaces;
+using Common_Types_Layer.Interfaces.Dapper;
 using Data_Access_Layer.Dapper;
 using FluentValidation.AspNetCore;
 using Microsoft.Data.SqlClient;
