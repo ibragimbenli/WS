@@ -7,6 +7,8 @@ using Data_Access_Layer.Dapper;
 using FluentValidation.AspNetCore;
 using Microsoft.Data.SqlClient;
 using Model_Layer.Entities;
+//using Microsoft.Data.SqlClient;
+using Oracle.ManagedDataAccess.Client;
 using System.Data;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,8 +31,11 @@ builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
 
-builder.Services.AddScoped<IDbConnection>(sp =>
-                new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//string _sqlConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddScoped<IDbConnection>(sp => new SqlConnection(_sqlConnectionString));
+string _oracleConnectionString = builder.Configuration.GetConnectionString("OracleConnection");
+builder.Services.AddScoped<IDbConnection>(sp => new OracleConnection(_oracleConnectionString));
 builder.Services.AddAutoMapper(typeof(PersonProfile));
 builder.Services.AddAutoMapper(typeof(ProductProfile));
 builder.Services.AddAutoMapper(typeof(CategoryProfile));

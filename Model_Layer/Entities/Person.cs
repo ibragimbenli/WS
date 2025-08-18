@@ -19,4 +19,16 @@ namespace Model_Layer.Entities
         // Navigation Property
         public List<Product>? Products { get; set; }
     }
+
+    public class Tarim
+    {
+        public int ID { get; set; }
+        public string? Name { get; set; }
+        public string? National_Identity_Number { get; set; }
+        public string? SurName { get; set; }
+        //public string? Email { get; set; }
+        public DateTime Birth_Date { get; set; }
+        // Navigation Property
+        public int Kimlik_İlce { get; set; }
+    }
 }

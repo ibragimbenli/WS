@@ -13,6 +13,9 @@ namespace Data_Access_Layer.Dapper
         }
         public async Task<IEnumerable<Person>> GetAllAsync()
         {
+            var sss = GetPerson_Tarim();
+            return null;
+
             var sql = @"
         SELECT 
             EmployeeID AS Id,
@@ -47,5 +50,28 @@ namespace Data_Access_Layer.Dapper
             var sql = "DELETE FROM Employees WHERE EmployeeID = @Id";
             await _connection.ExecuteAsync(sql, new { Id = id });
         }
+
+        public async Task<List<Tarim>> GetPerson_Tarim()
+        {
+            List<Tarim> res = new List<Tarim>();
+            try
+            {
+                var p = new DynamicParameters();
+                string sql = $@"SELECT *
+                    FROM TZOB.Sys_Person
+                    WHERE ROWNUM <= 100
+                    --ORDER BY ROWNO, UYENO, ZIRAATODAKODU, UYEROWNO
+                ";
+
+                res = this._connection.Query<Tarim>(sql, p, commandType: CommandType.Text).ToList();
+            }
+            catch (Exception ex)
+            {
+                _ = ex;
+            }
+
+            return res;
+        }
+
     }
 }
