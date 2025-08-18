@@ -13,9 +13,6 @@ namespace Data_Access_Layer.Dapper
         }
         public async Task<IEnumerable<Person>> GetAllAsync()
         {
-            var sss = GetPerson_Tarim();
-            return null;
-
             var sql = @"
         SELECT 
             EmployeeID AS Id,
